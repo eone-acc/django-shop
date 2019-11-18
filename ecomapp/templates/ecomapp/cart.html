@@ -1,0 +1,22 @@
+{% extends 'ecomapp/base.html' %}
+
+{% block content %}
+<div class="col-12 text-center">
+<h3>Ваша корзина</h3>
+    </div>
+<table class="table">
+<tr>
+    <td class="text-center">Товар</td>
+    <td class="text-center">Количество</td>
+    <td class="text-center">Цена</td>
+</tr>
+{% for item in cart.items.all %}
+<tr>
+    <td class="text-center">{{ item.product.title }}</td>
+    <td class="text-center">{{ item.qty }}</td>
+    <td class="text-center">{{ item.item_total}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

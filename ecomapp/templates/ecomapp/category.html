@@ -1,0 +1,18 @@
+{%  extends 'ecomapp/base.html' %}
+
+{% block content %}
+<div class="col-sm-12">
+    <h2 class="text-center">{{ category.name }}</h2>
+    <hr>
+    <div class="row">
+    {% for product in products_of_category %}
+    <div class="col-sm-4 text-center">
+        <img src="{{ product.image.url }}" alt="" style="width: 80%;height: 250px;">
+        <h4 class="text-center"> {{ product.title }} </h4>
+        <p class="text-center">Цена <strong>{{ product.price }}</strong></p>
+         <a href="#" ><button class="btn btn-danger">Добавить в корзину</button> </a>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
